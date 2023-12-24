@@ -25,11 +25,11 @@ It installs:
 #+BEGIN_SRC bash
 #  Clone this repository:
   git clone https://github.com/brandflake11/arch-audio-container.git
-#  Use podman to create the image for you:
+# Use podman to create the image for you:
   podman build -t brandflake11/arch-audio arch-audio-container/.
-#  If the image fails for any reason:
-  #  Submit an issue at https://github.com/brandflake11/arch-audio-container/issues
-#  If the image build succeeds:
+# If the image fails for any reason:
+  # Submit an issue at https://github.com/brandflake11/arch-audio-container/issues
+# If the image build succeeds:
   distrobox create --image localhost/brandflake11/arch-audio arch-audio
 #+END_SRC
 
