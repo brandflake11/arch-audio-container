@@ -14,7 +14,7 @@ It installs:
 - An Arch Linux container with everything needed to install AUR packages and with multilib support
 - Some optimizations to make building and installing packages faster including setting the MAKEFLAG to use all processor cores and installing multicore/faster compression programs
 - Yay AUR helper
-- Enables color in pacman.conf  
+- Color option in pacman.conf  
 - Pro-audio package group using pipewire-jack (jack2 can later be installed instead)
 - Emacs with aspell in English and Portuguese
 - A cm-incudine install script that can setup everything for a Common Lisp audio and development environment (downloads to /root)
