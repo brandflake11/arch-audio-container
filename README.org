@@ -1,0 +1,45 @@
+* About
+
+This is a Dockerfile/containerfile for setting up a pro-audio workspace (in arch linux) for distrobox. It was designed so the creator could hop on any distro and use all of the tools he would need. Although it is highly personalized for the creator's work, you can also use this if interested.
+
+* Goal
+
+The goal is to setup Arch Linux with all of the needed tools and tweaks for an easy-to-use userspace, mainly so the creator wouldn't have to keep setting up Arch environments when using different distros. Why do the same thing repeatedly, when you can do it once completely?
+
+* What Does this Container Include?
+
+The container installs lots of preset goodies that can get you up and running on an Arch Linux system. However, the image is a whopping 13.5GB in size, so keep that in mind when using it. It is not small by any means.
+
+It installs:
+- An Arch Linux container with everything needed to install AUR packages and with multilib support
+- Some optimizations to make building and installing packages faster including setting the MAKEFLAG to use all processor cores and installing multicore/faster compression programs
+- Yay AUR helper
+- Enables color in pacman.conf  
+- Pro-audio package group using pipewire-jack (jack2 can later be installed instead)
+- Emacs with aspell in English and Portuguese
+- A cm-incudine install script that can setup everything for a Common Lisp audio and development environment (downloads to /root)
+
+* Installation
+
+- Clone this repository:
+  ~git clone https://github.com/brandflake11/arch-audio-container.git~
+- Use podman to create the image for you:
+  ~podman build -t brandflake11/arch-audio arch-audio-container/.~
+- If the image fails for any reason:
+  - Submit an issue at https://github.com/brandflake11/arch-audio-container/issues
+- If the image build succeeds:
+  ~distrobox create --image localhost/brandflake11/arch-audio arch-audio~
+
+And you are all set. From there, you can run wofi (on wayland environments) or rofi (on X11 environments) for a nice laucher to get access to all of the applications. You can export wofi with a ~distrobox-export -b $(which wofi)~ and then make a keyboard shortcut on your desktop or window manager to use ~~/.local/bin/wofi --show drun~. You can also export whichever .desktop application you would like directly with distrobox.
+
+* Potential Uses
+
+Are you tired of your distro not having all of the packages you need for a professional audio environment? Does Arch Linux entice you, but you don't really want to maintain an Arch Linux system? Are you on, or would you like to be on, an immutable Linux distro and still want to make music/art? This container intends to fulfill all of these considerations.
+
+* Some Other Mentions
+
+By default, the container installs pipewire-jack, enabling you to use the pro-audio applications with your distro's apps. However, for some applications and usecases, jack may be preferred. If that is the case, after setting up the distrobox, you can simply do ~sudo pacman -S jack2 pipewire-jack-client~ and you can start up (from within distrobox) jack with qjackctl. You can route your system's audio into the distrobox jack by enabling dbus connection within qjackctl. On your host system, you may need to enable realtime-privileges in order for jack to get realtime support. I'm not sure if this is necessary for pipewire-jack.
+
+The nice thing about having all of this in a container is you could have two versions of this container, one with pipewire, and one with jack, and choose between the two depending on your usecase. AND, since you can route pipewire into jack, you can run applications from both versions of the container at the same time. Neat. 
+
+This container was tested on Fedora's universal-blue fedora-silverblue:latest image. I haven't tested this on another distro yet, unfortunately.
