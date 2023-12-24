@@ -34,7 +34,10 @@ podman build -t brandflake11/arch-audio arch-audio-container/.
 distrobox create --image localhost/brandflake11/arch-audio arch-audio
 #+END_SRC
 
-And you are all set. From there, you can run wofi (on wayland environments) or rofi (on X11 environments) for a nice laucher to get access to all of the applications. You can export wofi with a ~distrobox-export -b $(which wofi)~ and then make a keyboard shortcut on your desktop or window manager to use ~~/.local/bin/wofi --show drun~. You can also export whichever .desktop application you would like directly with distrobox.
+And you are all set. From there, you can run wofi (on wayland environments) or rofi (on X11 environments) for a nice laucher to get access to all of the applications. You can export wofi with a ~distrobox-export -b $(which wofi)~ 
+and then make a keyboard shortcut on your desktop or window manager to use 
+~\~/.local/bin/wofi --show drun~.
+You can also export whichever .desktop application you would like directly with distrobox.
 
 * Potential Uses
 
