@@ -36,11 +36,15 @@ distrobox create --image localhost/brandflake11/arch-audio arch-audio
 
 And you are all set. From there, you can run wofi (on wayland environments) or rofi (on X11 environments) for a nice laucher to get access to all of the applications. You can export wofi with a 
 
-~distrobox-export -b $(which wofi)~ 
+~distrobox-export -b $(which wofi) # For wofi~
+
+~distrobox-export -b $(which rofi) $ For rofi~.
 
 and then make a keyboard shortcut on your desktop or window manager to use 
 
-~\~/.local/bin/wofi --show drun~.
+~$HOME/.local/bin/wofi --show drun~.
+
+~$HOME/.local/bin/rofi -show drun -normalwindow~.
 
 You can also export whichever .desktop application you would like directly with distrobox.
 
