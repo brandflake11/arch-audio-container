@@ -42,9 +42,9 @@ And you are all set. From there, you can run wofi (on wayland environments) or r
 
 and then make a keyboard shortcut on your desktop or window manager to use 
 
-~$HOME/.local/bin/wofi --show drun~.
+~$HOME/.local/bin/wofi --show drun~
 
-~$HOME/.local/bin/rofi -show drun -normalwindow~.
+~$HOME/.local/bin/rofi -show drun -normalwindow~
 
 You can also export whichever .desktop application you would like directly with distrobox.
 
