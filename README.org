@@ -38,7 +38,7 @@ And you are all set. From there, you can run wofi (on wayland environments) or r
 
 ~distrobox-export -b $(which wofi) # For wofi~
 
-~distrobox-export -b $(which rofi) $ For rofi~.
+~distrobox-export -b $(which rofi) # For rofi~
 
 and then make a keyboard shortcut on your desktop or window manager to use 
 
