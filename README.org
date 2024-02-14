@@ -17,7 +17,7 @@ It installs:
 - Color option in pacman.conf  
 - Pro-audio package group using pipewire-jack (jack2 can later be installed instead)
 - Emacs with aspell in English and Portuguese
-- A cm-incudine install script that can setup everything for a Common Lisp audio and development environment (downloads to /root)
+- A cm-incudine install script that can setup everything for a Common Lisp audio and development environment (downloads to /)
 
 * Installation
 
