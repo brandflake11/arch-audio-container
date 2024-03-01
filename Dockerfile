@@ -79,3 +79,6 @@ RUN git clone https://github.com/brandflake11/install-cm-incudine.git
 
 # Enable Color for pacman
 RUN sed -i 's/^#Color/Color/' /etc/pacman.conf
+
+# Enables some extra pipewire stuff
+RUN pacman -S pipewire-alsa lib32-pipewire lib32-pipewire-jack lib32-pipewire-v4l2 pipewire-pulse pipewire-v4l2  --noconfirm
