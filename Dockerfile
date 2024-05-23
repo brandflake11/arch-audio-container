@@ -33,7 +33,7 @@ RUN pacman -S pipewire-jack --noconfirm
 
 # Install all of the pro audio stuff and wanted packages
 # Aspell is used for flyspell-mode in emacs
-RUN pacman -S --needed pro-audio emacs aspell-en aspell-pt wofi --noconfirm 
+RUN pacman -S --needed pro-audio lsp-plugins emacs aspell-en aspell-pt wofi --noconfirm 
 
 # I need to fix this part as makepkg blocks building as root
 # Install yay
